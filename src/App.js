@@ -85,7 +85,7 @@ const App = () => {
         <Route path="/instructor-dashboard" element={<InstructorDashboard />} />
         <Route path="/instructor/create-course" element={<CreateCourse />} />
         <Route path="/instructor/my-courses" element={<MyCourses />} />
-        <Route path="/instructor/course/:courseId" element={<UpdateCourse />} />
+        <Route path="/update-course/:courseId" element={<UpdateCourse />} />
         <Route path="/courses" element={<CourseList />} />
         <Route path="/enrollments" element={<EnrollmentStatus />} />
       </Routes>

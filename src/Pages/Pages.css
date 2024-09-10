@@ -22,6 +22,28 @@ body {
     margin-bottom: 20px;
 }
 
+.dashboard-content {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Space between buttons */
+}
+
+.logout-button {
+    position: absolute;
+    top: 120px; /* Adjust based on header height and desired space */
+    right: 15px;
+    background-color: #f44336; /* Red color for logout button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
 .dashboard-buttons {
     margin-bottom: 20px;
 }
@@ -209,34 +231,62 @@ body {
   }
 
 
-  /* Pages.css */
-.create-course-button,
-.submit-button,
-.cancel-button,
-.view-students-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin: 5px;
-}
+/* General Styles for the Instructor Dashboard */
+.dashboard-container {
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
 
-.create-course-form,
-.enrolled-students {
-  margin-top: 20px;
-}
-
-.create-course-form input,
-.create-course-form textarea {
-  display: block;
-  width: 100%;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
+  
+  .dashboard-hero {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .dashboard-hero h1 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .dashboard-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dashboard-button {
+    background-color: #00aaff; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .dashboard-button a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .dashboard-button:hover {
+    background-color: #0044cc; /* Darker Green */
+  }
+  
+  /* For buttons related to specific actions */
+  .create-course-button,
+  .view-courses-button{
+    background-color: #008CBA; /* Blue */
+  }
+  
+  .create-course-button:hover,
+  .view-courses-button:hover {
+    background-color: #007bb5; /* Darker Blue */
+  }
 
 .students-table {
   width: 100%;
@@ -304,3 +354,135 @@ body {
     font-size: 16px;
     color: #333;
   }
+
+
+  /* Styles for MyCourses Page */
+.my-courses-container {
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .course-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .course-item {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .course-item h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .view-details-button,
+    .update-course-button {
+    margin-right: 50px; /* Space between buttons */
+    }
+  
+  .view-details-button,.update-course-button {
+    background-color: #008CBA; /* Blue */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .view-details-button:hover , .update-course-button:hover{
+    background-color: #007bb5; /* Darker Blue */
+  }
+
+
+  
+  .enrolled-students-container {
+    margin-top: 20px;
+  }
+  
+  .students-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .students-table th, .students-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .students-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .students-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #666;
+  }
+
+
+  .update-course-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 15px;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  p {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
