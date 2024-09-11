@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import './Pages.css'; // Import styles for MyCourses
+import './Pages.css'; 
 
 const MyCourses = () => {
   const [courses, setCourses] = useState([]);

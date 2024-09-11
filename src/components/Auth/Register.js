@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import './Auth.css';
 
 const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('student');  // 'student' or 'instructor'
+  const [role, setRole] = useState('student');  
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
 
   const handleRegister = async () => {
     if (!username || !password) {
@@ -22,7 +22,7 @@ const Register = () => {
     try {
       await axios.post('/api/auth/register', { username, password, role });
       alert('User registered successfully');
-      navigate('/login'); // Redirect to login page after successful registration
+      navigate('/login'); 
     } catch (error) {
       setError(error.response?.data?.message || 'Registration failed');
     } finally {

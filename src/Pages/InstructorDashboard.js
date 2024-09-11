@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
-import './Pages.css'; // Import styles for Dashboard
+import { Link, useNavigate } from 'react-router-dom'; 
+import './Pages.css'; 
 
 const InstructorDashboard = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate(); // Initialize useNavigate for navigation
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -28,7 +28,7 @@ const InstructorDashboard = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    navigate('/login'); // Redirect to login page after logout
+    navigate('/login'); 
   };
 
   if (loading) return <div className="loading">Loading...</div>;

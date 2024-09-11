@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
-import './Pages.css'; // Import styles for UpdateCourse
+import './Pages.css'; 
 
 const UpdateCourse = () => {
-  const { courseId } = useParams(); // Extract courseId from URL parameters
+  const { courseId } = useParams(); 
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [content, setContent] = useState('');
   const [message, setMessage] = useState('');
-  const [loading, setLoading] = useState(true); // Added loading state
-  const navigate = useNavigate(); // For navigation
-
+  const [loading, setLoading] = useState(true); 
+  const navigate = useNavigate(); 
   useEffect(() => {
     const fetchCourse = async () => {
       try {
@@ -25,7 +24,7 @@ const UpdateCourse = () => {
       } catch (error) {
         console.error('Error fetching course:', error);
       } finally {
-        setLoading(false); // Set loading to false after fetching
+        setLoading(false); 
       }
     };
 
@@ -40,14 +39,14 @@ const UpdateCourse = () => {
         headers: { Authorization: `Bearer ${token}` }
       });
       setMessage('Course updated successfully!');
-      navigate('/instructor/my-courses'); // Redirect to MyCourses page
+      navigate('/instructor/my-courses'); 
     } catch (error) {
       console.error('Error updating course:', error);
       setMessage('Failed to update course.');
     }
   };
 
-  if (loading) return <div className="loading">Loading...</div>; // Display loading state
+  if (loading) return <div className="loading">Loading...</div>; 
 
   return (
     <div className="update-course-container">

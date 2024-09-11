@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react'; // Import useState and useEffect
+import React, { useState, useEffect } from 'react'; 
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './Pages.css'; // Ensure this path is correct
-
+import './Pages.css'; 
 const StudentDashboard = () => {
-  const [username, setUsername] = useState(''); // Define state variables
+  const [username, setUsername] = useState(''); 
   const [message, setMessage] = useState('');
   const [recommendations, setRecommendations] = useState('');
   const [prompt, setPrompt] = useState('');
@@ -19,7 +18,7 @@ const StudentDashboard = () => {
         const response = await axios.get('/api/auth/me', {
           headers: { Authorization: `Bearer ${token}` },
         });
-        setUsername(response.data.username); // Set the username from the response
+        setUsername(response.data.username);
       } catch (error) {
         console.error('Error fetching user information:', error);
         setMessage('Failed to fetch user information.');
@@ -60,7 +59,7 @@ const StudentDashboard = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    navigate('/login'); // Redirect to login page after logout
+    navigate('/login'); 
   };
 
   return (

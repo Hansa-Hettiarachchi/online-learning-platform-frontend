@@ -1,61 +1,3 @@
-// import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import axios from 'axios';
-// import './Auth.css';
-
-// const Login = () => {
-//   const [username, setUsername] = useState('');
-//   const [password, setPassword] = useState('');
-//   const [error, setError] = useState('');
-//   const [loading, setLoading] = useState(false);
-//   const navigate = useNavigate();
-
-//   const handleLogin = async () => {
-//     if (!username || !password) {
-//       setError('Please fill in all fields');
-//       return;
-//     }
-
-//     setLoading(true);
-//     try {
-//       const response = await axios.post('/api/auth/login', { username, password });
-//       localStorage.setItem('token', response.data.token); // Store JWT token
-//       navigate('/dashboard'); // Redirect to dashboard after successful login
-//     } catch (error) {
-//       setError(error.response?.data?.message || 'Login failed');
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
-
-//   return (
-//     <div className="auth-container">
-//       <div className="auth-card">
-//         <h2>Login</h2>
-//         <input
-//           type="text"
-//           placeholder="Username"
-//           value={username}
-//           onChange={e => setUsername(e.target.value)}
-//         />
-//         <input
-//           type="password"
-//           placeholder="Password"
-//           value={password}
-//           onChange={e => setPassword(e.target.value)}
-//         />
-//         <button onClick={handleLogin} disabled={loading}>
-//           {loading ? 'Logging in...' : 'Login'}
-//         </button>
-//         {error && <p className="error-message">{error}</p>}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Login;
-
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -103,6 +45,10 @@ const Login = () => {
     }
   };
 
+  const handleGoHome = () => {
+    navigate('/');
+  };
+
   return (
     <div className="auth-container">
       <div className="auth-card">
@@ -121,6 +67,9 @@ const Login = () => {
         />
         <button onClick={handleLogin} disabled={loading}>
           {loading ? 'Logging in...' : 'Login'}
+        </button>
+        <button onClick={handleGoHome} className="home-button">
+          Go to Home
         </button>
         {error && <p className="error-message">{error}</p>}
       </div>
