@@ -19,7 +19,7 @@ const Login = () => {
     setLoading(true);
     try {
       // Send login request
-      const loginResponse = await axios.post('https://deployement-backend.vercel.app/api/auth/login', { username, password });
+      const loginResponse = await axios.post('/api/auth/login', { username, password });
       const token = loginResponse.data.token;
 
       // Store JWT token
