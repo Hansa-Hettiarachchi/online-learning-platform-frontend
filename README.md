@@ -1,4 +1,4 @@
-# Online-Learning-Platform-backend
+# Online-Learning-Platform-frontend
 
 # Project Setup Instructions
 
